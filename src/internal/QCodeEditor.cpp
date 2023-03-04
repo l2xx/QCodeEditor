@@ -651,9 +651,9 @@ void QCodeEditor::setCompleter(QCompleter *completer)
 
     connect(
         m_completer,
-        QOverload<const QString&>::of(&QCompleter::activated),
+        SIGNAL(activated(QString)),
         this,
-        &QCodeEditor::insertCompletion
+        SLOT(insertCompletion(QString))
     );
 }
 
